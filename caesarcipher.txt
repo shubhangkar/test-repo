@@ -1,0 +1,36 @@
+def encryption(s):
+	a=""
+	for i in s:
+		if i != ' ':
+			x=ord(i)
+			x+=3
+			if x>122:
+				x-=26
+			i=chr(x)
+			a+=i
+		else:
+			a+=' '
+	print(a)
+def decryption(s):
+	a=""
+	for i in s:
+		if i !=' ':
+			x=ord(i)
+			x-=3
+			if x<97:
+				x+=26
+			i=chr(x)
+			a+=i
+		else:
+			a+=' '
+	print(a)
+print("1.Encryption \n2.Decryption \nEnter your choice:")
+t=int(input())
+if t==1:
+	print("Enter your message to be encrypted:")
+	s=input()
+	encryption(s)
+else:
+	print("Enter your message to be decrypted:")
+	s=input()
+	decryption(s)
